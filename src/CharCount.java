@@ -18,11 +18,10 @@ public class CharCount {
         System.out.println(line);
         System.out.println();
         line = line.replaceAll(" ", "");
-        for (int i = 0; i < line.length(); i++) {
-            char ch = line.charAt(i);
+        for (char ch: line.toCharArray()) {
             if (list.containsKey(ch)) {
                 int count = list.get(ch);
-                list.put(ch, count + 1);
+                list.put(ch, count++);
             }
             else
                 list.put(ch, 1);
